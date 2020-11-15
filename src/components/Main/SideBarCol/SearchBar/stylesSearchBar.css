@@ -1,0 +1,29 @@
+.searchbar-container {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  height: 80%;
+  width: 80%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+}
+
+.search-outline {
+  width: 30px;
+  height: 30px;
+}
+
+.input {
+  height: 25px;
+  color: #000;
+  background: lightgray;
+  outline: none;
+  border: none;
+}
