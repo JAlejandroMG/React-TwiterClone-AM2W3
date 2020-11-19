@@ -8,7 +8,7 @@
 
 .trends-title {
   height: 10%;
-  width: 93%;
+  width: 90%;
   background: lightgray;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -17,6 +17,7 @@
 
 .trends {
   height: 90%;
+  box-sizing: border-box;
   width: 90%;
   padding: 0 5px;
   overflow: scroll;

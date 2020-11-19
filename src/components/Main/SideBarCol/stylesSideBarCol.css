@@ -1,0 +1,20 @@
+.search-dropdown-space{
+  width: 90%;
+  height: 5%;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background: lightgray;
+}
+
+.search-dropdown {
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  overflow: scroll;
+  background: lightgray;
+}

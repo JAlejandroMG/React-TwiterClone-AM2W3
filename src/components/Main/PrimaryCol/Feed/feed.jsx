@@ -1,6 +1,6 @@
 import React from "react";
 import Tweet from "./Tweet/tweet";
-import {feed} from '../../../../databases/feed';
+// import {feed} from '../../../../databases/feed';
 import {
   HeartSolid,
   ChatSolid,
@@ -10,24 +10,25 @@ import {
 import './stylesFeed.css';
 
 class Feed extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            tweets: feed,
-            interactionsArray: feed.interaction,
-            iconArray: [
-              <ChatSolid className="interaction-icon" />, 
-              <ShareSolid className="interaction-icon" />, 
-              <HeartSolid className="interaction-icon" />
-            ]
+          iconArray: [
+            <ChatSolid className="interaction-icon" />, 
+            <ShareSolid className="interaction-icon" />, 
+            <HeartSolid className="interaction-icon" />
+          ]
         }
     }
 
+
     render() {
+        const tweets = this.props.tweets;
+
         return (
-            <div>
+            <div className='tweets-container'>
                 {
-                    this.state.tweets.map((tweet, index) => {
+                    tweets.map((tweet, index) => {
                         return (
                           <Tweet
                           key={index}
@@ -42,7 +43,10 @@ class Feed extends React.Component {
                           retweets={tweet.interaction[1].retweets}
                           selectedLikes={tweet.interaction[2].selectedLikes}
                           likes={tweet.interaction[2].likes}
-                          iconList={this.state.iconArray}/>
+                          iconList={this.state.iconArray}
+                          showContextM={tweet.showContextM}
+                          toggleDropdownMenuFn={this.props.toggleDropdownMenuFn}
+                          removeTweeterFn={this.props.removeTweeterFn} />
                         )
                     })
                 }                

@@ -1,3 +1,9 @@
+/* .post-tweet-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
 .t-post-tweet > img{
   width: 10%;
   max-width: 100%;

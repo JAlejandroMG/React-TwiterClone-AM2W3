@@ -1,6 +1,7 @@
 import React from 'react';
 import Interaction from './Interaction/interaction';
 import './stylesTweet.css';
+import {DotsVerticalOutline, TrashOutline} from '@graywolfai/react-heroicons';
 
 class Tweet extends React.Component{
   constructor(props) {
@@ -48,7 +49,16 @@ class Tweet extends React.Component{
                         <h6>{this.props.profile}</h6>
                         <h6>{this.props.username}</h6>
                     </div>
-                    <div className="c3"></div>
+                    <div className="c3" onClick={() => this.props.toggleDropdownMenuFn(this.props.tweetIndex)} >
+                      <DotsVerticalOutline />
+                    </div>
+                    {
+                      this.props.showContextM &&
+                      <div className="c4" onClick={() => this.props.removeTweeterFn(this.props.tweetIndex)}>
+                        <TrashOutline className="trash-icon" />
+                        <h4>Borrar Tweet</h4>
+                      </div>
+                    }
                 </div>
                 <div className="row">
                     <p className="content">                
