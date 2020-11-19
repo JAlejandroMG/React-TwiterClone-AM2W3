@@ -26,7 +26,7 @@ class Feed extends React.Component {
         const tweets = this.props.tweets;
 
         return (
-            <div>
+            <div className='tweets-container'>
                 {
                     tweets.map((tweet, index) => {
                         return (
@@ -43,7 +43,10 @@ class Feed extends React.Component {
                           retweets={tweet.interaction[1].retweets}
                           selectedLikes={tweet.interaction[2].selectedLikes}
                           likes={tweet.interaction[2].likes}
-                          iconList={this.state.iconArray}/>
+                          iconList={this.state.iconArray}
+                          showContextM={tweet.showContextM}
+                          toggleDropdownMenuFn={this.props.toggleDropdownMenuFn}
+                          removeTweeterFn={this.props.removeTweeterFn} />
                         )
                     })
                 }                

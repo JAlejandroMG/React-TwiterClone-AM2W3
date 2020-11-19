@@ -43,4 +43,5 @@
 .t-sidebar-col{
   /* border: 1px dashed #000; */
   width: 35%;
+  position: relative;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './stylesInteraction.css';
 
-const Interaction = (props) => {                  {/* ${props.selected && 'selected'} */}
+const Interaction = (props) => {
   return (
       <div className={`interaction-container interaction ${props.selected ? 'selected' : ''}`} onClick={() => props.selectedFn(props.index)}>
         <div>{props.source}</div>

@@ -9,7 +9,7 @@ class PrimaryCol extends React.Component {
     super(props);
     this.state= {
       tweets: feed,
-      newTweet: ''
+      newTweet: '',
     }
   }
 
@@ -41,6 +41,17 @@ class PrimaryCol extends React.Component {
     this.setState({ newTweet: tweet });
   };
 
+  toggleDropdownMenu = (index) => {
+    const tweetsClone = JSON.parse(JSON.stringify(this.state.tweets));
+    tweetsClone[index].showContextM = !tweetsClone[index].showContextM;
+    this.setState({tweets: tweetsClone});
+  }
+
+  removeTweeter = (index) => {
+    const tweetsClone = JSON.parse(JSON.stringify(this.state.tweets));
+    tweetsClone.splice(index,1);
+    this.setState({tweets: tweetsClone});
+  }
 
   render() {
     return (
@@ -52,21 +63,10 @@ class PrimaryCol extends React.Component {
             handleInputFn={this.handleInput}
             addTweetFn={this.addTweet}
           />
-          <Feed tweets={this.state.tweets}/>
+          <Feed tweets={this.state.tweets} toggleDropdownMenuFn={this.toggleDropdownMenu} removeTweeterFn={this.removeTweeter} />
       </div>
     )
   }
 }
 
 export default PrimaryCol;
-
-
-
-
-{/* <div className="panel-footer">
-                  <TextArea
-                    newMessage={this.state.newMessage}
-                    handleInput={this.handleInput}
-                    sendMessage={this.sendMessage}
-                  />
-                </div> */}
