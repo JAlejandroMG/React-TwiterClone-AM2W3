@@ -42,6 +42,7 @@
   color: #FFF;
   font-weight: bold;
   border: navajowhite;
+  outline-style: none;
 }
 
 .t-post-tweet .t-profile-img{
