@@ -29,7 +29,7 @@ class PrimaryCol extends React.Component {
       verified: true,
       blocked: true
     };
-    tweetsClone.push(newTweetObj); //problema
+    tweetsClone.splice(0,0,newTweetObj); //problema
     this.setState({ tweets: tweetsClone, newTweet: "" });
     e.preventDefault();
   };

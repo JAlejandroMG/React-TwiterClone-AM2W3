@@ -51,7 +51,7 @@ class SideBarCol extends React.Component {
                     key={index}
                     profileImg={profile.profilesImg}
                     profile={profile.profile}
-                    username={profile.username}
+                    username={profile.username.toLowerCase()}
                   />
                 )
               })
